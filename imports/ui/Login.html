@@ -1,0 +1,23 @@
+<template name="login">
+    {{#if isRegister}}
+    <form class="login-form">
+        <div>
+            <label htmlFor="username">Username</label>
+
+            <input type="text" placeholder="Username" name="username" required />
+        </div>
+
+        <div>
+            <label htmlFor="password">Password</label>
+
+            <input type="password" placeholder="Password" name="password" required />
+        </div>
+        <div >            
+            <button id="login-btn" type="submit">Log In</button>
+            <button id="register-btn" type="submit">Register</button>
+        </div>
+    </form>
+    {{else}}
+        {{>register}}
+    {{/if}}
+</template>

@@ -1,0 +1,63 @@
+<body>
+    {{> mainContainer }}
+</body>
+
+<template name="mainContainer">
+    <div class="app">
+        <header>
+            <div class="app-bar">
+                <div class="app-header">
+                    <h1>To Watch List</h1>
+                </div>
+            </div>
+        </header>
+        <div class="main">
+            {{#if isUserLogged}}
+            <div class="user">
+                {{getUser.username}} 🚪
+            </div>
+            {{>form}}
+            <div class="filter">
+                <button id="hide-seen-button">
+                    {{#if hideSeen}}
+                    Show All
+                    {{else}}
+                    Hide Seen
+                    {{/if}}
+                </button>
+            </div>
+            <ul class="movies">
+                {{#each one_movie in movies}}
+                {{> movie one_movie=one_movie}}
+                {{/each}}
+            </ul>
+            {{else}}
+            {{> login }}
+            {{/if}}
+        </div>
+    </div>
+</template>
+
+
+
+<template name="form">
+    <form class="my_form">
+        <div class="my_form">
+            <label for="name">Movie name: </label>
+            <input type="text" name="name" required>
+        </div>
+        <div class="my_form">
+            <label for="name">Type: </label>
+            <select name="type">
+                {{#each elem in types}}
+                <option value={{elem._id}}>
+                    {{elem.type}}
+                </option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="my_form">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</template>

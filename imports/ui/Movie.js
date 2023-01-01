@@ -1,12 +1,13 @@
 import { Template } from 'meteor/templating';
 import { MoviesCollection } from '../api/MovieCollection';
+import {Meteor} from 'meteor/meteor';
 import './Movie.html'
 
 Template.movie.events({
     'click .toggle-checked'(){
-        MoviesCollection.update(this.one_movie._id,{$set:{isChecked: !this.one_movie.isChecked}})
+        Meteor.call('movie.setIsChecked',this.one_movie._id, !this.one_movie.isChecked)
     },
-    'click .delete'(){
-        MoviesCollection.remove(this.one_movie._id)
+    'click .delete'(){        
+        Meteor.call('movie.remove',this.one_movie._id)
     }
 })

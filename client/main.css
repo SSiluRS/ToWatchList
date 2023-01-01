@@ -77,7 +77,31 @@ header {
   margin-right: 1em;
 }
 
+.my_form > button{
+  background-color: #62807e;
+  font-size: 18px;
+}
 
+.add_user_div>input, .del_user_div>input{
+  width: 100px;
+}
+
+.add_user_div, .del_user_div{
+  font-weight: normal;
+}
+
+.add_user_div>#add_user_back, .del_user_div>#del_user_back{  
+  background-color: #ff3046;
+}
+
+.add_user_div>label, .add_user_div>input, .del_user_div>input, .del_user_div>input{
+  
+  font-size: 14px;
+}
+.add_user_div>button, .del_user_div>button{
+  background-color: #62807e;
+  font-size: 14px;
+}
 
 form.my_form {
   margin-top: 10px;
@@ -120,6 +144,7 @@ label {
   display: flex;
   padding: 16px;
   border-bottom: #eee solid 1px;
+  align-items: center;
 }
 
 .movies > li > span {
@@ -127,7 +152,8 @@ label {
   flex-grow: 1;
 }
 
-.movies > li > button {
+.movies > li > button{
+  height: fit-content;
   justify-self: flex-end;
   background-color: #ff3046;
 }
@@ -214,7 +240,7 @@ label {
   background-color: #62807e;
 }
 
-.user {
+.user, .add_user, .add_user_form, .del_user, .del_user_form {
   display: flex;
 
   align-self: flex-end;

@@ -16,6 +16,34 @@
             <div class="user">
                 {{getUser.username}} 🚪
             </div>
+            {{#if addUser}}
+            <form class="add_user_form">
+                <div class="add_user_div">
+
+                    <button id="add_user_back" type="submit">&times;</button>
+                    <label for="name">User name: </label>
+                    <input type="text" name="name">
+                    <button id="add_user_submit" type="submit">Submit</button>
+                </div>
+            </form>
+            {{else}}
+
+            <div class="add_user">Добавить пользователя к списку</div>
+            {{/if}}
+            {{#if delUser}}
+            <form class="del_user_form">
+                <div class="del_user_div">
+
+                    <button id="del_user_back" type="submit">&times;</button>
+                    <label for="name">User name: </label>
+                    <input type="text" name="name">
+                    <button id="del_user_submit" type="submit">Submit</button>
+                </div>
+            </form>
+            {{else}}
+
+            <div class="del_user">Удалить пользователя к списку</div>
+            {{/if}}
             {{>form}}
             <div class="filter">
                 <button id="hide-seen-button">
@@ -57,7 +85,18 @@
             </select>
         </div>
         <div class="my_form">
-            <input type="submit" value="Submit">
+            <label for="name">Genre: </label>
+            <br />
+            <select name="genre" multiple>
+                {{#each elem in genres}}
+                <option value={{elem._id}}>
+                    {{elem.genre}}
+                </option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="my_form">
+            <button>Submit</button>
         </div>
     </form>
 </template>

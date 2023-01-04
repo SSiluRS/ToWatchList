@@ -1,7 +1,7 @@
 <template name="movie">
     <li>
         <input type="checkbox" checked="{{one_movie.isChecked}}" class="toggle-checked" />
-        <span>Название: {{one_movie.name}}<br/>Тип: {{type_name one_movie.typeId}}<br/>Жанры: {{get_genres one_movie.genres}}</span>
+        <span><b>{{user_name one_movie.userId}}</b><br/>Название: {{one_movie.name}}<br/>Тип: {{type_name one_movie.typeId}}<br/>Жанры: {{get_genres one_movie.genres}}</span>
         <button class="delete">&times;</button>
     </li>
 </template>

@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { GenresCollection } from './GenreCollection';
 import { TypesCollection } from './TypeCollection';
+import { Meteor } from 'meteor/meteor';
 
 
 Template.registerHelper('types',function(){
@@ -18,6 +19,13 @@ Template.registerHelper('type_name',function(elem){
   var name = TypesCollection.findOne({_id: elem}); 
   //console.log(faculty_n);
   return name["type"];
+})
+
+Template.registerHelper('user_name',function(elem){
+  
+  var name = Meteor.users.findOne({_id: elem}); 
+  //console.log(faculty_n);
+  return name["username"];
 })
 
 Template.registerHelper('get_genres',function(genres){

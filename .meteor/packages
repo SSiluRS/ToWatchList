@@ -23,6 +23,6 @@ autopublish@1.0.7             # Publish all data to the clients (for prototyping
 
 hot-module-replacement@0.5.2  # Update code in development without reloading the page
 blaze-hot               # Update files using Blaze's API with HMR
-dev-error-overlay
-reactive-dict
-accounts-password
+dev-error-overlay@0.1.1
+reactive-dict@1.3.1
+accounts-password@2.3.3
